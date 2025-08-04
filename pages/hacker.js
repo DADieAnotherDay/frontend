@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function Hacker() {
   const [cmd, setCmd] = useState("");
   const [response, setResponse] = useState("");
+  const [image, setImage] = useState("");
 
   const handleCmd = async (e) => {
     e.preventDefault();
@@ -11,13 +12,15 @@ export default function Hacker() {
       const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: cmd, type: "hacker" })  // ← for love page
-
+        body: JSON.stringify({ message: `hack: ${cmd}` }) // Prefix to trigger hacker response
       });
+
       const data = await res.json();
       setResponse(data.response || "No response from backend.");
+      setImage(data.image || "");
     } catch {
       setResponse("Something went wrong!");
+      setImage("");
     }
   };
 
@@ -37,8 +40,13 @@ export default function Hacker() {
             />
           </div>
         </form>
-        {response && (
-          <pre style={styles.output}>{response}</pre>
+
+        {response && <pre style={styles.output}>{response}</pre>}
+
+        {image && (
+          <div style={{ marginTop: 20, textAlign: "center" }}>
+            <img src={image} alt="Hacker Style" style={{ maxWidth: "100%", borderRadius: 10 }} />
+          </div>
         )}
       </div>
     </div>
