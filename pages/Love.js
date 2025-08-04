@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function Love() {
   const [note, setNote] = useState("");
   const [response, setResponse] = useState("");
+  const [image, setImage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,13 +12,14 @@ export default function Love() {
       const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input, type: "love" })  // ← for love page
-
+        body: JSON.stringify({ message: `love: ${note}` }),
       });
       const data = await res.json();
       setResponse(data.response || "No response from backend.");
+      setImage(data.image || "");
     } catch {
       setResponse("Something went wrong!");
+      setImage("");
     }
   };
 
@@ -35,6 +37,7 @@ export default function Love() {
           <button type="submit" style={styles.button}>Send 💖</button>
         </form>
         {response && <p style={styles.response}>💗 {response}</p>}
+        {image && <img src={image} alt="Love" style={styles.image} />}
       </div>
     </div>
   );
@@ -90,5 +93,11 @@ const styles = {
     background: "#fff5f9",
     border: "1px dashed #ff69b4",
     fontStyle: "italic",
+  },
+  image: {
+    marginTop: 20,
+    width: "100%",
+    maxWidth: 300,
+    borderRadius: 12,
   },
 };
