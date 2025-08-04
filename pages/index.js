@@ -1,3 +1,4 @@
+// pages/index.js (AI Grader Main Tool)
 import { useState } from "react";
 
 export default function Home() {
@@ -6,25 +7,21 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  try {
-    const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message: input })  // FIXED
-    });
-
-    const data = await res.text();  // Backend returns plain text, not JSON
-    setResponse(data || "No response from backend.");
-  } catch (err) {
-    console.error("Error during fetch:", err);  // LOG ERROR
-    setResponse("Something went wrong!");
-  }
-  setLoading(false);
-};
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input })
+      });
+      const data = await res.json();
+      setResponse(data.response || "No response from backend.");
+    } catch {
+      setResponse("Something went wrong!");
+    }
+    setLoading(false);
+  };
 
   return (
     <div style={styles.container}>
@@ -33,13 +30,12 @@ export default function Home() {
         <form onSubmit={handleSubmit}>
           <textarea
             style={styles.input}
-            placeholder="Enter your answer..."
+            placeholder="Paste your answer here..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            rows={5}
           />
-          <button type="submit" style={styles.button} disabled={loading}>
-            {loading ? "⏳ Sending..." : "🚀 Send to Backend"}
+          <button style={styles.button} disabled={loading}>
+            {loading ? "⏳ Sending..." : "🚀 Grade It"}
           </button>
         </form>
         {response && <p style={styles.response}>🧠 Response: {response}</p>}
@@ -51,50 +47,51 @@ export default function Home() {
 const styles = {
   container: {
     minHeight: "100vh",
+    background: "#0f0f0f",
+    color: "#00ff99",
     display: "flex",
-    justifyContent: "center",
     alignItems: "center",
-    background: "#f0f4f8",
-    fontFamily: "Arial, sans-serif",
+    justifyContent: "center",
+    fontFamily: "monospace",
   },
   card: {
-    background: "#fff",
-    padding: "30px",
-    borderRadius: "12px",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-    maxWidth: "500px",
-    width: "100%",
+    background: "#111",
+    padding: 30,
+    borderRadius: 12,
+    boxShadow: "0 0 20px #00ff99",
+    width: "90%",
+    maxWidth: 600,
   },
   heading: {
-    marginBottom: "20px",
-    fontSize: "28px",
+    fontSize: 28,
+    marginBottom: 20,
     textAlign: "center",
-    color: "#333",
   },
   input: {
     width: "100%",
-    padding: "10px",
-    borderRadius: "8px",
-    border: "1px solid #ccc",
-    marginBottom: "20px",
-    fontSize: "16px",
+    padding: 15,
+    borderRadius: 10,
+    border: "2px solid #00ff99",
+    marginBottom: 20,
+    background: "#000",
+    color: "#0f0",
+    fontSize: 16,
   },
   button: {
     width: "100%",
-    padding: "12px",
-    fontSize: "16px",
-    background: "#0070f3",
-    color: "#fff",
+    padding: 12,
+    background: "#00ff99",
+    color: "#000",
+    fontWeight: "bold",
     border: "none",
-    borderRadius: "8px",
+    borderRadius: 10,
     cursor: "pointer",
   },
   response: {
-    marginTop: "20px",
-    padding: "12px",
-    background: "#e6f7ff",
-    border: "1px solid #91d5ff",
-    borderRadius: "8px",
-    color: "#0050b3",
+    marginTop: 20,
+    background: "#001f1f",
+    padding: 15,
+    borderRadius: 10,
+    border: "1px solid #00ff99",
   },
 };
