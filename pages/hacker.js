@@ -11,7 +11,8 @@ export default function Hacker() {
       const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: cmd })
+        body: JSON.stringify({ message: cmd, type: "hacker" })  // ← for love page
+
       });
       const data = await res.json();
       setResponse(data.response || "No response from backend.");
