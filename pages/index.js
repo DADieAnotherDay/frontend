@@ -1,44 +1,17 @@
-// pages/index.js (AI Grader Main Tool)
-import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
-  const [input, setInput] = useState("");
-  const [response, setResponse] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input })
-      });
-      const data = await res.json();
-      setResponse(data.response || "No response from backend.");
-    } catch {
-      setResponse("Something went wrong!");
-    }
-    setLoading(false);
-  };
-
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.heading}>🎓 AI Grader</h1>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            style={styles.input}
-            placeholder="Paste your answer here..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-          <button style={styles.button} disabled={loading}>
-            {loading ? "⏳ Sending..." : "🚀 Grade It"}
-          </button>
-        </form>
-        {response && <p style={styles.response}>🧠 Response: {response}</p>}
+        <h1 style={styles.heading}>💻 AI Hub</h1>
+        <p style={styles.subheading}>Choose your experience 👇</p>
+
+        <div style={styles.linkBox}>
+          <Link href="/bday" style={styles.link}>🎂 Birthday Wishes</Link>
+          <Link href="/hacker" style={styles.link}>💀 Hacker Mode</Link>
+          <Link href="/love" style={styles.link}>❤️ Love Note</Link>
+        </div>
       </div>
     </div>
   );
@@ -46,52 +19,44 @@ export default function Home() {
 
 const styles = {
   container: {
-    minHeight: "100vh",
-    background: "#0f0f0f",
-    color: "#00ff99",
+    height: "100vh",
     display: "flex",
-    alignItems: "center",
     justifyContent: "center",
-    fontFamily: "monospace",
+    alignItems: "center",
+    background: "#0f0f0f",
+    fontFamily: "'Courier New', monospace",
+    color: "#fff",
   },
   card: {
-    background: "#111",
-    padding: 30,
-    borderRadius: 12,
-    boxShadow: "0 0 20px #00ff99",
-    width: "90%",
-    maxWidth: 600,
-  },
-  heading: {
-    fontSize: 28,
-    marginBottom: 20,
+    background: "#1a1a1a",
+    padding: "40px",
+    borderRadius: "16px",
+    boxShadow: "0 0 30px #00ff88",
     textAlign: "center",
   },
-  input: {
-    width: "100%",
-    padding: 15,
-    borderRadius: 10,
-    border: "2px solid #00ff99",
-    marginBottom: 20,
-    background: "#000",
-    color: "#0f0",
-    fontSize: 16,
+  heading: {
+    fontSize: "36px",
+    marginBottom: "10px",
+    color: "#00ff88",
   },
-  button: {
-    width: "100%",
-    padding: 12,
-    background: "#00ff99",
-    color: "#000",
-    fontWeight: "bold",
-    border: "none",
-    borderRadius: 10,
-    cursor: "pointer",
+  subheading: {
+    fontSize: "18px",
+    marginBottom: "30px",
+    color: "#ccc",
   },
-  response: {
-    marginTop: 20,
-    background: "#001f1f",
-    padding: 15,
-    borderRadius: 10,
-    border: "1px solid #00ff99",
+  linkBox: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "15px",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#00ff88",
+    fontSize: "20px",
+    background: "#222",
+    padding: "12px 20px",
+    borderRadius: "10px",
+    transition: "0.3s",
+    border: "1px solid #00ff88",
   },
 };
