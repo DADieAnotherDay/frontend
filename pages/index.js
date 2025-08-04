@@ -6,24 +6,25 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message })
-      });
+  e.preventDefault();
+  setLoading(true);
+  try {
+    const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: input })  // FIXED
+    });
 
-      const data = await res.json();
-      setResponse(data.response || "No response from backend.");
-    } catch (err) {
-      setResponse("Something went wrong!");
-    }
-    setLoading(false);
-  };
+    const data = await res.text();  // Backend returns plain text, not JSON
+    setResponse(data || "No response from backend.");
+  } catch (err) {
+    console.error("Error during fetch:", err);  // LOG ERROR
+    setResponse("Something went wrong!");
+  }
+  setLoading(false);
+};
 
   return (
     <div style={styles.container}>
