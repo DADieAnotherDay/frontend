@@ -8,9 +8,9 @@ export default function Home() {
         <p style={styles.subheading}>Choose your experience 👇</p>
 
         <div style={styles.linkBox}>
-          <Link href="/bday" style={styles.link}>🎂 Birthday Wishes</Link>
-          <Link href="/hacker" style={styles.link}>💀 Hacker Mode</Link>
-          <Link href="/Love" style={styles.link}>❤️ Love Note</Link>
+        //  <Link href="/bday" style={styles.link}>🎂 Birthday Wishes</Link>
+          <Link href="/bday" style={styles.link}>💀 Birthday Wishes</Link>
+       //   <Link href="/Love" style={styles.link}>❤️ Love Note</Link>
         </div>
       </div>
     </div>
