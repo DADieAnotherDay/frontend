@@ -9,7 +9,7 @@ export default function Home() {
 
         <div style={styles.linkBox}>
         
-          <Link href="/Bday" style={styles.link}>🥧 Birthday Wishes</Link>
+          <Link href="/bday" style={styles.link}>🥧 Birthday Wishes</Link>
        
         </div>
       </div>
