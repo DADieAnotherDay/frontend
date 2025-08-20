@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h1 style={styles.heading}>💻 AI Hub</h1>
-        <p style={styles.subheading}>Choose your experience 👇</p>
+        <h1 style={styles.heading}>💻 You'r Hub</h1>
+        <p style={styles.subheading}>Choose your Wish 👇</p>
 
         <div style={styles.linkBox}>
         
-          <Link href="/bday" style={styles.link}>🥧 Birthday Wishes</Link>
+          <Link href="/Bday" style={styles.link}>🥧 Birthday Wishes</Link>
        
         </div>
       </div>
