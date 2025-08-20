@@ -9,24 +9,80 @@ export default function Bday() {
   const [response, setResponse] = useState("");
   const [image, setImage] = useState("");
 
-  const handleWish = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: `bday wish for ${relation} named ${name}, who is turning ${age} years old.`,
-        }),
-      });
-      const data = await res.json();
-      setResponse(data.response || "No response from backend.");
-      setImage(data.image || "");
-    } catch {
-      setResponse("Something went wrong!");
-      setImage("");
-    }
-  };
+  const generateBirthdayWish = (name, age, relation) => {
+  let wish = "";
+
+  if (relation.toLowerCase() === "friend") {
+    wish = `
+Happy Birthday ${name}! 🎉  
+On this special day, I celebrate not just your age but the wonderful memories we’ve created together.  
+${age} looks amazing on you, and I’m sure this year will bring more laughter, adventures, and happiness.  
+You’re not just a ${relation}; you’re family.  
+I hope your journey ahead is filled with love, success, and endless joy.  
+May you always find reasons to smile and keep inspiring those around you.  
+Cheers to your dreams, your passions, and the exciting future that awaits you.  
+May your heart remain light, your spirit bold, and your days bright.  
+Here’s to good health, good vibes, and the best experiences life has to offer.  
+Remember, the world is lucky to have someone as kind, fun, and genuine as you.  
+Stay true to yourself and keep shining brightly.  
+So let’s celebrate your life, achievements, and the beautiful person you are becoming.  
+May this ${age}th chapter be your best one yet.  
+Happy Birthday once again, dear ${relation}. 🥳🎂🎁  
+Love, hugs, and lots of cake! 🍰  
+    `;
+  }
+
+  else if (relation.toLowerCase() === "brother") {
+    wish = `
+Happy Birthday to my amazing brother ${name}! 🎂  
+Growing up with you has been one of the greatest blessings of my life.  
+At ${age}, you’re stronger, wiser, and even cooler than before.  
+You’ve always been my protector, guide, and best buddy rolled into one.  
+May your life ahead be filled with achievements and joy.  
+I admire the person you are and the one you’re becoming.  
+No matter how old we get, you’ll always be my partner in mischief.  
+I pray that you find happiness in every moment and success in every endeavor.  
+May this year bring you closer to your dreams and surround you with love.  
+Let’s make today unforgettable with laughter and celebration.  
+Stay bold, stay kind, and always believe in yourself.  
+To the world, you may just be one man, but to me, you are the world.  
+I hope this ${age}th year is packed with blessings and surprises.  
+Happy Birthday once again, my dear ${relation}! 🎉🥳  
+    `;
+  }
+
+  else {
+    wish = `
+Happy Birthday ${name}! 🎉  
+Congratulations on turning ${age}, ${relation}.  
+You are truly special, and I wish you endless love, happiness, and success.  
+Stay blessed always and keep smiling.  
+    `;
+  }
+
+  return wish;
+};
+
+const handleWish = async (e) => {
+  e.preventDefault();
+  try {
+    const finalWish = generateBirthdayWish(name, age, relation);
+
+    const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: `bday: ${finalWish}` }),
+    });
+
+    const data = await res.json();
+    setResponse(data.response || "No response from backend.");
+    setImage(data.image || "");
+  } catch {
+    setResponse("Something went wrong!");
+    setImage("");
+  }
+};
+
 
   return (
     <div style={styles.container}>
