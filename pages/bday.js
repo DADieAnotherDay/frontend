@@ -1,8 +1,11 @@
+
 // pages/bday.js 🎉 Birthday Message Page
 import { useState } from "react";
 
 export default function Bday() {
-  const [wish, setWish] = useState("");
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [relation, setRelation] = useState("");
   const [response, setResponse] = useState("");
   const [image, setImage] = useState("");
 
@@ -12,7 +15,9 @@ export default function Bday() {
       const res = await fetch("https://backend-services-0s29.onrender.com/render-endpoint", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: `bday: ${wish}` }),
+        body: JSON.stringify({
+          message: `bday wish for ${relation} named ${name}, who is turning ${age} years old.`,
+        }),
       });
       const data = await res.json();
       setResponse(data.response || "No response from backend.");
@@ -30,12 +35,29 @@ export default function Bday() {
         <form onSubmit={handleWish}>
           <input
             type="text"
-            placeholder="Write your birthday wish..."
+            placeholder="Enter name..."
             style={styles.input}
-            value={wish}
-            onChange={(e) => setWish(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
           />
-          <button style={styles.button}>🎁 Send Wish</button>
+          <input
+            type="number"
+            placeholder="Enter age..."
+            style={styles.input}
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Enter relation (e.g., friend, brother, mom)..."
+            style={styles.input}
+            value={relation}
+            onChange={(e) => setRelation(e.target.value)}
+            required
+          />
+          <button style={styles.button}>🎁 Generate Wish</button>
         </form>
         {response && <p style={styles.response}>🎉 {response}</p>}
         {image && <img src={image} alt="Birthday" style={styles.image} />}
@@ -73,7 +95,7 @@ const styles = {
     fontSize: 16,
     border: "2px solid #ff4081",
     borderRadius: 10,
-    marginBottom: 20,
+    marginBottom: 15,
   },
   button: {
     background: "#ff4081",
