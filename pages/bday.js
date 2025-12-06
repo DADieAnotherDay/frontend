@@ -50,9 +50,9 @@ I hope this ${age}th year is packed with blessings and surprises.
 Happy Birthday once again, my dear ${relation}! 🎉🥳  
     `;
   }
-    else if (relation.toLowerCase() === "ma'am) {
+    else if (relation.toLowerCase() === "ma'am") {
     wish = `
-Happy Birthday to my amazing brother ${name}! 🎂  
+Happy Birthday to my one and only ma'am ${name} ji 💞! 🎂  
 Growing up with you has been one of the greatest blessings of my life.  
 At ${age}, you’re stronger, wiser, and even cooler than before.  
 You’ve always been my protector, guide, and best buddy rolled into one.  
