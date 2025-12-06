@@ -47,9 +47,35 @@ tab mujhe me hi galat lagta hun,
 vo aapne jo bhi reason se mara uski vajha se nahi kyuki me 
 aapke mrne pr gussa hua, mtlab aapke marne pr gussa kese ho sakta hun 
 me ye to galat hai mujhe nahi pata kyu kese pr bus uss time lag jata 
-hai bura thoda lekin badme lagta hai aapne hi to mara hai isme kya, I
-sme mujhe bura kyu lagega 
-lekin kya kre tab tak to aap mana hi li hoti ho mujhe , hehehe (aur agli baar bhi vahi hoga)
+hai bura thoda lekin badme lagta hai aapne hi to mara hai isme kya, 
+Isme mujhe bura kyu lagega 
+lekin kya kre tab tak to aap mana hi li hoti ho mujhe , 
+hehehe (aur agli baar bhi vahi hoga) 
+
+Dusri baat, Aapko pata hai ladai karna kitna galat baat hoti 
+hai fir bhi aap itni ladti ho mere se 90% of time aapan 
+Jab pura din ladne ke baad ya masti krne ke baad evening 
+me uss water RO ke pass hote hai tab aapni ladai hot hi hoti hai 
+Lekin kitni bhi ladai kr lo me eese hi aapko pareshan krne ke liye 
+galti krta rahunga hamesha hamesha aapko koi nahi bacha sakta 
+Mere Minunu 
+
+
+Aur ek aur baat vo aap na ek dress pehente ho, 
+you know vo bohot aachi lagti hai aapke uupr aur parmanent 
+vo dress ke sath aap ek hi hair style krte ho idk 
+vo normal hai ya kuch special but bohot bohot bohot pyari 
+lagti ho usme aap aur vo dress to eesa lagta hai ese 
+kisi game me default dress hoti hai na character ki bilkul vesi 
+ho aap ke uupr vo dress, koi bhi sari koi bhi kurti pehno aap 
+vo sab me aap aachi lag sakte ho lekin ye dress me to bohot 
+jada pyare lagte ho, agli baar pegnoge to bataunga 
+aapko konsi vali dress pr bohot pyari lagti vo mujhe abhi to bohot 
+time ho gya aapne nahi pehni vo vahi dress usme uupr to aap 
+vo black tangTop pehente ho aur niche kuch ghaghre jesa 
+hota hai lekin bohot patla sa aur uspr vo desigh hoti hai 
+kuch .Kabhi aap mere sapne me aae na to me gurantee se 
+keh sakta hu ki vahi dress me aaoge aap  
 Happy Birthday once again, my dear ${relation}! 🎉🥳  
     `;
   }
