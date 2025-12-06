@@ -34,19 +34,22 @@ Love, hugs, and lots of cake! 🍰
 
   else if (relation.toLowerCase() === "Meri pyari ma'am ") {
     wish = `
-Happy Birthday to my amazing brother ${name}! 🎂  
-Growing up with you has been one of the greatest blessings of my life.  
-At ${age}, you’re stronger, wiser, and even cooler than before.  
-You’ve always been my protector, guide, and best buddy rolled into one.  
-May your life ahead be filled with achievements and joy.  
-I admire the person you are and the one you’re becoming.  
-No matter how old we get, you’ll always be my partner in mischief.  
-I pray that you find happiness in every moment and success in every endeavor.  
-May this year bring you closer to your dreams and surround you with love.  
-Let’s make today unforgettable with laughter and celebration.  
-Stay bold, stay kind, and always believe in yourself.  
-To the world, you may just be one man, but to me, you are the world.  
-I hope this ${age}th year is packed with blessings and surprises.  
+Yepieeeeeeeeeeeee aapne vo part dhundh liya jisme kuch aalag 
+hai aaapke liye
+Han Han Meri Pyari Ma'am, 
+to yaha jada kuch to nahi hai bus hai jo mujhe kehna hai thodu sa
+
+Jese pehli baat vo jab kal aapne mujeh Greenzee me mara tha aur
+mujeh thoda bura lag gya tha baadme aapne sorry sorry bola tha
+vesa aur bhi hua hai na thoda to mujhe bolna tha sorry uske liye mtlab 
+mujhe initially thoda bura lag jata ha lekin jab badme me sochta hun 
+tab mujhe me hi galat lagta hun, 
+vo aapne jo bhi reason se mara uski vajha se nahi kyuki me 
+aapke mrne pr gussa hua, mtlab aapke marne pr gussa kese ho sakta hun 
+me ye to galat hai mujhe nahi pata kyu kese pr bus uss time lag jata 
+hai bura thoda lekin badme lagta hai aapne hi to mara hai isme kya, I
+sme mujhe bura kyu lagega 
+lekin kya kre tab tak to aap mana hi li hoti ho mujhe , hehehe (aur agli baar bhi vahi hoga)
 Happy Birthday once again, my dear ${relation}! 🎉🥳  
     `;
   }
