@@ -32,7 +32,7 @@ Love, hugs, and lots of cake! 🍰
     `;
   }
 
-  else if (relation.toLowerCase() === "Meri pyari ma'am ") {
+  else if (relation.toLowerCase() === "meri pyari ma'am ") {
     wish = `
 Yepieeeeeeeeeeeee aapne vo part dhundh liya jisme kuch aalag 
 hai aaapke liye
@@ -55,16 +55,16 @@ Happy Birthday once again, my dear ${relation}! 🎉🥳
   }
     else if (relation.toLowerCase() === "ma'am ") {
     wish = `
-Happy Birthday to my one and only ma'am ${name} ji 💞! 🎂 `
-`I can't believe I found you! I'm not there whenever you need, 
+Happy Birthday to my one and only ma'am ${name} ji 💞! 🎂 
+I can't believe I found you! I'm not there whenever you need, 
 but you were always there, 
 whether I told you to stay with me or I didn't, you were there. 
 You always do things that I like, 
 and 
 I'm the one who notices that but still hesitates to appreciate, mention, 
-or just thank you for that.`
+or just thank you for that.
 
-`Once I read that the person who mentions, again and again, 
+Once I read that the person who mentions, again and again, 
 'one day you will leave,' is actually the one who leaves first. 
 I haven't only read this, 
 but 
@@ -75,9 +75,9 @@ I know one day this will come true.
 But I just want that whenever our minds hit us with memories, 
 we always smile, 
 and whenever either of us needs the other person, 
-we can contact them without thinking twice`
+we can contact them without thinking twice
 
-`It is the first time I'm expressing my feelings in English 
+It is the first time I'm expressing my feelings in English 
 just because I don't want you to have to put in effort here 
 as well to understand my feelings. 
 (koi spelling mistake ho to thoda edjust krna 👉👈)
