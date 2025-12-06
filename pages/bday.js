@@ -50,6 +50,24 @@ I hope this ${age}th year is packed with blessings and surprises.
 Happy Birthday once again, my dear ${relation}! 🎉🥳  
     `;
   }
+    else if (relation.toLowerCase() === "ma'am) {
+    wish = `
+Happy Birthday to my amazing brother ${name}! 🎂  
+Growing up with you has been one of the greatest blessings of my life.  
+At ${age}, you’re stronger, wiser, and even cooler than before.  
+You’ve always been my protector, guide, and best buddy rolled into one.  
+May your life ahead be filled with achievements and joy.  
+I admire the person you are and the one you’re becoming.  
+No matter how old we get, you’ll always be my partner in mischief.  
+I pray that you find happiness in every moment and success in every endeavor.  
+May this year bring you closer to your dreams and surround you with love.  
+Let’s make today unforgettable with laughter and celebration.  
+Stay bold, stay kind, and always believe in yourself.  
+To the world, you may just be one man, but to me, you are the world.  
+I hope this ${age}th year is packed with blessings and surprises.  
+Happy Birthday once again, my dear ${relation}! 🎉🥳  
+    `;
+    }
 
   else {
     wish = `
